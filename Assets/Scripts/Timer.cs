@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         sc = GetComponent<StateChange>();
+   
     }
 
     void Update()

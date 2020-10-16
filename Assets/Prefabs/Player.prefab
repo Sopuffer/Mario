@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1503241013}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,18 +131,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0771dda0beba6084e84b6a18c0e0c909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoolDownTimer: 1
+  life: 3
+  trappedTimer: 0
+  CoolDownTimer: 0.5
   rightdirtimer: 0
   leftdirtimer: 0
   normalspeed: 1
-  MaxSpeed: 3
-  TimeZeroToMax: 2
-  TimeMaxToZero: 1
+  MaxSpeed: 2
+  TimeZeroToMax: 2.5
+  TimeMaxToZero: 1.5
   jumpspeed: 5
-  HasCollided: 0
+  PlayerDefeated: 0
   OnGround: 0
   GoingLeft: 0
   GoingRight: 0
   IsJumping: 0
-  InAir: 0
   CanDoubleJump: 0
+  rightJumpAllowed: 0
+  leftJumpAllowed: 0
+  GameWon: 0
+  trapped: 0

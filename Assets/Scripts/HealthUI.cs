@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-public class HealthSystem : MonoBehaviour
+﻿using UnityEngine;
+public class HealthUI : MonoBehaviour
 {
     public GameObject Heart;
     public GameObject Heart2;

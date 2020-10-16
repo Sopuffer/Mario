@@ -32,15 +32,13 @@ public class PlayerMovement : MonoBehaviour
     bool RightButtonActive;
     bool LeftButtonActive;
     
-    
-
-
 
     string RightWall = "RightWall";
     string LeftWall = "LeftWall";
     string Pole = "Pole";
     string Ground = "Ground";
     string Trap = "Trap";
+    string Enemy = "Enemy";
 
     private void Awake()
     {
@@ -282,6 +280,11 @@ public class PlayerMovement : MonoBehaviour
             leftJumpAllowed = true;
         }
 
+        if (coll.gameObject.CompareTag(Enemy))
+        {
+            trapped = true;
+        }
+
     }
 
     private void OnCollisionExit2D(Collision2D coll)
@@ -299,7 +302,14 @@ public class PlayerMovement : MonoBehaviour
         {
             leftJumpAllowed = false;
         }
+
+        if (coll.gameObject.CompareTag(Enemy))
+        {
+            trapped = false;
+        }
     }
+
+
     private void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.CompareTag(Trap))
@@ -309,6 +319,9 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D coll)
     {
-        trapped = false;
+        if (coll.gameObject.CompareTag(Trap))
+        {
+            trapped = false;
+        }
     }
 }

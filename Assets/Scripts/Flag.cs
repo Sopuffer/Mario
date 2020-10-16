@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class FlagScript : MonoBehaviour
+public class Flag : MonoBehaviour
 {
     GameObject Player;
     GameObject Pole;

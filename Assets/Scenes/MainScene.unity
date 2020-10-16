@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -239,6 +240,31 @@ MonoBehaviour:
   GameWonObject: {fileID: 1915273925}
   PlayerLostGame: 0
   PlayerWonGame: 0
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae92d4d4776969f4bb6d5a82ba4717ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timertext: {fileID: 630230362}
+--- !u!114 &630230362 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 630230362, guid: ce43709f884f27e45be4dc69b6a30b81,
+    type: 3}
+  m_PrefabInstance: {fileID: 8204076075490873820}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &962871173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -310,6 +336,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721816550887101746, guid: ffdc4b41d3f01f0489b6125532d1bfd1,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 721816550887101747, guid: ffdc4b41d3f01f0489b6125532d1bfd1,
         type: 3}
@@ -542,6 +573,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 721816550887101746, guid: ffdc4b41d3f01f0489b6125532d1bfd1,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 721816550887101747, guid: ffdc4b41d3f01f0489b6125532d1bfd1,
         type: 3}
       propertyPath: m_IsTrigger
@@ -700,6 +736,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721816550887101746, guid: ffdc4b41d3f01f0489b6125532d1bfd1,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 721816550887101747, guid: ffdc4b41d3f01f0489b6125532d1bfd1,
         type: 3}
@@ -899,6 +940,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 519420033}
+    - target: {fileID: 630230362, guid: ce43709f884f27e45be4dc69b6a30b81, type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 630230362, guid: ce43709f884f27e45be4dc69b6a30b81, type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce43709f884f27e45be4dc69b6a30b81, type: 3}
 --- !u!1001 &9013090157905957220

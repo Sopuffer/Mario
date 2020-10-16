@@ -8,9 +8,9 @@ public class EnemyMovement : MonoBehaviour
     Rigidbody2D rb;
     float timer = 1;
     float secondtimer = 2;
-    public float leftWalkTimer;
-    public float rightWalkTimer;
-    public float standstillTimer;
+    float leftWalkTimer;
+    float rightWalkTimer;
+    float standstillTimer;
 
     public bool WalkingRight;
     public bool WalkingLeft;
@@ -100,7 +100,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (coll.gameObject.CompareTag(Ground))
         {
-            rb.velocity += new Vector2(0, 1);
+            rb.velocity = new Vector2(0, 0);
         }
 
     }

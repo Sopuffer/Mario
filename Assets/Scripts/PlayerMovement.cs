@@ -283,7 +283,11 @@ public class PlayerMovement : MonoBehaviour
         {
             trapped = true;
         }
-
+        if (coll.gameObject.CompareTag(Enemy) && transform.position.y> coll.gameObject.transform.position.y +.5)
+        {
+            Destroy(coll.gameObject);
+            trapped = false;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D coll)
@@ -305,6 +309,11 @@ public class PlayerMovement : MonoBehaviour
         if (coll.gameObject.CompareTag(Enemy))
         {
             trapped = false;
+        }
+
+        if (coll.gameObject.CompareTag(Enemy) && transform.position.y > coll.gameObject.transform.position.y + .2)
+        {
+            OnGround = false;
         }
     }
 

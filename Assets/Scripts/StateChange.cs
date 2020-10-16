@@ -7,8 +7,9 @@ public class StateChange : CameraFunctions
     public GameObject RestartButtonObject;
     public GameObject GameWonObject;
     GameObject flag;
+    GameObject player;
+    PlayerMovement pm;
     FlagScript fs;
-
     public bool PlayerLostGame;
     public bool PlayerWonGame;
     
@@ -19,16 +20,18 @@ public class StateChange : CameraFunctions
         GameWonObject.SetActive(false);
         flag = GameObject.FindGameObjectWithTag("Flag");
         fs = flag.GetComponent<FlagScript>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        pm = player.GetComponent<PlayerMovement>();
     }
 
     void Update()
     {
-        if (GameOver)
+        if (GameOver || pm.PlayerDefeated)
         {
             PlayerLost();
         }
 
-        if (fs.TheGameIsComplete)
+        if (fs.theGameIsComplete)
         {
 
             PlayerWon();
@@ -42,6 +45,7 @@ public class StateChange : CameraFunctions
     {
         GameOverObject.SetActive(true);
         PlayerLostGame = true;
+        Time.timeScale = 0.0f;
     }
 
     void PlayerWon()

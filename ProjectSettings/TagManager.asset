@@ -7,6 +7,9 @@ TagManager:
   - Ground
   - Pole
   - Flag
+  - LeftWall
+  - RightWall
+  - Trap
   layers:
   - Default
   - TransparentFX

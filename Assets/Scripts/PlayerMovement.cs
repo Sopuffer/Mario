@@ -4,64 +4,62 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb;
-    Vector2 jump;
-    Vector2 reversejump;
-
-    GameObject Floor;
-    
-
+    public int life = 3;
+    public float trappedTimer = 0;
     public float CoolDownTimer;
     public float rightdirtimer;
     public float leftdirtimer;
     public float normalspeed;
-
     public float MaxSpeed;
     public float TimeZeroToMax;
     public float TimeMaxToZero;
     public float jumpspeed;
     float accelpersec;
     float decelpersec;
-    
     float velocity;
-    public bool HasCollided;
+
+
+    public bool PlayerDefeated;
     public bool OnGround;
     public bool GoingLeft;
     public bool GoingRight;
     public bool IsJumping;
-    public bool InAir;
     public bool CanDoubleJump;
-
+    public bool rightJumpAllowed;
+    public bool leftJumpAllowed;
+    public bool GameWon;
+    public bool trapped;
     bool RightButtonActive;
     bool LeftButtonActive;
+    
+    
 
-    public bool GameWon;
+
+
+    string RightWall = "RightWall";
+    string LeftWall = "LeftWall";
+    string Pole = "Pole";
+    string Ground = "Ground";
+    string Trap = "Trap";
 
     private void Awake()
     {
         accelpersec = MaxSpeed / TimeZeroToMax;
         decelpersec = -MaxSpeed / TimeMaxToZero;
         velocity = 0.0f;
+        life = 3;
         
     }
     void Start()
     {
-        
+        Time.timeScale = 1;
         rb = GetComponent<Rigidbody2D>();
-        //Floor = GameObject.FindGameObjectWithTag("Ground");
         rightdirtimer = CoolDownTimer;
         leftdirtimer = CoolDownTimer;
     }
 
     void Update()
     {
-        //if (OnGround)
-        //{
-        //    rb.velocity = new Vector2(0, 0);
-        //}
-        ////else
-        ////{
-        ////    CanDoubleJump = true;
-        ////}
         UserInput();
 
         if (OnGround)
@@ -85,10 +83,44 @@ public class PlayerMovement : MonoBehaviour
             PlayerDecelerate();
         }
 
+        if (trapped)
+        {
+            trappedTimer += Time.deltaTime;
+        }
+        else
+        {
+            trappedTimer = 0.0f;
+        }
+
         PlayerDoubleJump();
+        WallJump();
+        PlayerLosesLife();
        
     }
+    void WallJump()
+    {
+        if (rightJumpAllowed && IsJumping)
+        {
+            rb.velocity = new Vector2(jumpspeed, jumpspeed);
+        }
+        if (leftJumpAllowed && IsJumping)
+        {
+            rb.velocity = new Vector2(-jumpspeed, jumpspeed);
+        }
+    }
 
+    void PlayerLosesLife()
+    {
+        if(trappedTimer >= 2)
+        {
+            life--;
+            trappedTimer = 0.0f;
+        }
+        if(life == 0)
+        {
+            PlayerDefeated = true;
+        }
+    }
     void UserInput()
     {
         KeyCode Jump = KeyCode.Space;
@@ -230,25 +262,53 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "Ground")
+
+        if (coll.gameObject.CompareTag(Ground))
         {
             rb.velocity = new Vector2(0, 0);
             OnGround = true;
         }
-        if (coll.gameObject.tag == "Pole")
+        if (coll.gameObject.CompareTag(Pole))
         {
             GameWon = true;
         }
+
+        if (coll.gameObject.CompareTag(LeftWall))
+        {
+            rightJumpAllowed = true;
+        }
+        if (coll.gameObject.CompareTag(RightWall))
+        {
+            leftJumpAllowed = true;
+        }
+
     }
 
     private void OnCollisionExit2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "Ground")
+        if (coll.gameObject.CompareTag(Ground))
         {
             OnGround = false;
             CanDoubleJump = true;
         }
-        
+        if (coll.gameObject.CompareTag(LeftWall))
+        {
+            rightJumpAllowed = false;
+        }
+        if (coll.gameObject.CompareTag(RightWall))
+        {
+            leftJumpAllowed = false;
+        }
     }
-
+    private void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.gameObject.CompareTag(Trap))
+        {
+            trapped = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D coll)
+    {
+        trapped = false;
+    }
 }

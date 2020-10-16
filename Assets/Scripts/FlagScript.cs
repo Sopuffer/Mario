@@ -1,24 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FlagScript : MonoBehaviour
 {
     GameObject Player;
+    GameObject Pole;
     PlayerMovement pm;
     Rigidbody2D rb;
-    Rigidbody2D playerrb;
-    public bool TheGameIsComplete;
-    // Start is called before the first frame update
+
+    float poleOffset = 1;
+    public bool theGameIsComplete;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         Player = GameObject.FindGameObjectWithTag("Player");
         pm = Player.GetComponent<PlayerMovement>();
-        playerrb = gameObject.GetComponent<Rigidbody2D>();
+        Pole = GameObject.FindGameObjectWithTag("Pole");
+      
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (pm.GameWon)
@@ -29,7 +29,7 @@ public class FlagScript : MonoBehaviour
 
     void FlagMovement()
     {
-        if (transform.position.y > -2.2)
+        if (transform.position.y > Pole.transform.position.y-poleOffset)
         {
             rb.velocity = new Vector2(0, -2);
 
@@ -37,7 +37,7 @@ public class FlagScript : MonoBehaviour
         else
         {
             rb.velocity = new Vector2(0, 0);
-            TheGameIsComplete = true;
+            theGameIsComplete = true;
         }
     }
 }

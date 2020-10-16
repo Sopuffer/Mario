@@ -5,7 +5,7 @@ public class Timer : MonoBehaviour
 {
     StateChange sc;
     public TMP_Text timertext;
-    float gametimer = 60;
+    float gametimer = 76;
    
     void Start()
     {

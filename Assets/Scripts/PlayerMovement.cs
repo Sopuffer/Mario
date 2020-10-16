@@ -255,8 +255,11 @@ public class PlayerMovement : MonoBehaviour
         velocity += Accel * Time.deltaTime;
         velocity = Mathf.Clamp(velocity, 0, MaxSpeed);
     }
-
-
+    //////////////////////////////////////*Sources for Acceleration/Decceleration*////////////////////////////////////////////////////////////
+    // * Making a Character Controller, Part 21: Acceleration; https://www.youtube.com/watch?v=uVKHllD-JZk&t=940s&ab_channel=BoardToBitsGames
+    // * Making a Character Controller, Part 22: Deceleration; https://www.youtube.com/watch?v=YskC8h3xFVQ&ab_channel=BoardToBitsGames
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
     private void OnCollisionEnter2D(Collision2D coll)
     {
 

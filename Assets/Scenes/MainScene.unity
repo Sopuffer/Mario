@@ -687,6 +687,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 6882655972697028535, guid: ee9f0f886d6d8b741a9b450d64511e99,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1503241011}
+    - target: {fileID: 6882655972697028535, guid: ee9f0f886d6d8b741a9b450d64511e99,
+        type: 3}
+      propertyPath: GameOverObject
+      value: 
+      objectReference: {fileID: 1189742975}
+    - target: {fileID: 6882655972697028535, guid: ee9f0f886d6d8b741a9b450d64511e99,
+        type: 3}
+      propertyPath: RestartButtonObject
+      value: 
+      objectReference: {fileID: 230892702}
+    - target: {fileID: 6882655972697028535, guid: ee9f0f886d6d8b741a9b450d64511e99,
+        type: 3}
+      propertyPath: GameWonObject
+      value: 
+      objectReference: {fileID: 1915273925}
     - target: {fileID: 6882655972697028534, guid: ee9f0f886d6d8b741a9b450d64511e99,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -747,26 +767,6 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1503241011}
-    - target: {fileID: 6882655972697028535, guid: ee9f0f886d6d8b741a9b450d64511e99,
-        type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 1503241011}
-    - target: {fileID: 6882655972697028535, guid: ee9f0f886d6d8b741a9b450d64511e99,
-        type: 3}
-      propertyPath: GameOverObject
-      value: 
-      objectReference: {fileID: 1189742975}
-    - target: {fileID: 6882655972697028535, guid: ee9f0f886d6d8b741a9b450d64511e99,
-        type: 3}
-      propertyPath: RestartButtonObject
-      value: 
-      objectReference: {fileID: 230892702}
-    - target: {fileID: 6882655972697028535, guid: ee9f0f886d6d8b741a9b450d64511e99,
-        type: 3}
-      propertyPath: GameWonObject
-      value: 
-      objectReference: {fileID: 1915273925}
     - target: {fileID: 6882655972697028532, guid: ee9f0f886d6d8b741a9b450d64511e99,
         type: 3}
       propertyPath: timertext
@@ -785,6 +785,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 630230362, guid: ce43709f884f27e45be4dc69b6a30b81, type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 630230362, guid: ce43709f884f27e45be4dc69b6a30b81, type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8204076074978953170, guid: ce43709f884f27e45be4dc69b6a30b81,
         type: 3}
@@ -896,14 +904,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 519420033}
-    - target: {fileID: 630230362, guid: ce43709f884f27e45be4dc69b6a30b81, type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 630230362, guid: ce43709f884f27e45be4dc69b6a30b81, type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce43709f884f27e45be4dc69b6a30b81, type: 3}
 --- !u!1001 &9013090157905957220

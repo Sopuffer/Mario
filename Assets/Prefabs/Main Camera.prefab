@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  FollowOffset: {x: 3, y: 1.29}
+  FollowOffset: {x: 3, y: 1.3}
   speed: 3
   GameOver: 0
 --- !u!114 &6882655972697028535

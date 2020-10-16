@@ -80,4 +80,9 @@ public class CameraFunctions : MonoBehaviour
             GameOver = true;
         }
     }
+
+
+    /////////////////////////////*Source for Camera Following Player*///////////////////////////////////////
+    ///Mario Style Camera Follow Tutorial; https://www.youtube.com/watch?v=GTxiCzvYNOc&ab_channel=PressStart
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
